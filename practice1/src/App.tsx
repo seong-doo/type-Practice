@@ -2,11 +2,26 @@ import React, { useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import './App.css';
 import LoginModal from './Component/LoginModal';
+import ArticleWriteModal from './Component/articleWriteModal';
+
+interface List {
+  articleContent: string;
+  articleTitle: string;
+  articleWriter: string;
+  articleAte: number;
+}
 
 function App() {
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
   const [isLogin, setIsLogin] = useState<boolean>(false);
-
+  const [articlesList, setArticleList] = useState<any>([
+    {
+      articleTitle: "how to use TypeScript",
+      articleContent: "well...",
+      articleWriter: "kimcoding",
+      articleAte: Date.now()
+    }
+  ])
 
   const clickLogin = () => {
     setIsModalVisible(true);
@@ -21,7 +36,20 @@ function App() {
         </div>
         <div>
           {isLogin ? 
-          <div>로그인 성공</div> : null}
+            <div>
+              <ArticleWriteModal articlesList={articlesList} setArticleList={setArticleList} />
+            </div> : null}
+            <div>
+              {articlesList.map((el:any)=> {
+                return (
+                <div>
+                  <span>{el.articleTitle}</span>
+                  <span>{el.articleContent}</span>
+                  <span>{el.articleWriter}</span>
+                  <span>{el.articleAte}</span>
+                </div>
+              )})}
+            </div>
         </div>
       </header>
     </div>
