@@ -4,17 +4,10 @@ import './App.css';
 import LoginModal from './Component/LoginModal';
 import ArticleWriteModal from './Component/articleWriteModal';
 
-interface List {
-  articleContent: string;
-  articleTitle: string;
-  articleWriter: string;
-  articleAte: number;
-}
-
 function App() {
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
   const [isLogin, setIsLogin] = useState<boolean>(false);
-  const [articlesList, setArticleList] = useState<any>([
+  const [articlesList, setArticleList] = useState([
     {
       articleTitle: "how to use TypeScript",
       articleContent: "well...",
@@ -46,9 +39,9 @@ function App() {
                     <span>writer</span>
                     <span>createdAt</span>
                   </div>
-              {articlesList.map((el:any)=> {
+              {articlesList.map((el, key)=> {
                 return (
-                  <div className="articleList">
+                  <div className="articleList" key={key}>
                     <span>{el.articleTitle}</span>
                     <span>{el.articleContent}</span>
                     <span>{el.articleWriter}</span>

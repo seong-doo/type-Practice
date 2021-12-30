@@ -1,14 +1,11 @@
 h1 {
-  color: red;
-}
+  color: red; }
 
 p {
-  color: red;
-}
+  color: red; }
 
 span {
-  width: 25%;
-}
+  width: 25%; }
 
 .modalBackground {
   position: fixed;
@@ -16,8 +13,7 @@ span {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.6);
-}
+  background: rgba(0, 0, 0, 0.6); }
 
 .modalWrapper {
   display: flex;
@@ -30,14 +26,37 @@ span {
   box-sizing: border-box;
   margin: 50px auto;
   padding: 20px;
-  background: #fff;
-}
+  background: #fff; }
 
 .articleList {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin-top: 3vh;
-}
+  margin-top: 3vh; }
 
-/*# sourceMappingURL=App.css.map */
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  justify-content: space-around;
+  padding: 0 0.2em;
+  text-align: center;
+  width: 5em; }
+
+.star-rating input {
+  display: none; }
+
+.star-rating label {
+  -webkit-text-fill-color: transparent;
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2.3px;
+  -webkit-text-stroke-color: #2b2a29;
+  cursor: pointer; }
+
+.star-rating :checked ~ label {
+  -webkit-text-fill-color: gold; }
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  -webkit-text-fill-color: #fff58c; }
