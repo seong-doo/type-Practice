@@ -39,24 +39,26 @@ const LoginModal: React.FunctionComponent<loginProps> = props => {
       }
 
     return (
-        <div className="modalBackground">
+        <div>
           { props.isModalVisible
           ? (
-            <div>
-                <span className="closeIcon" onClick={() => props.setIsModalVisible(false)}>&times;</span>
-                <div >
-                    <div>
-                        <div>ID</div>
-                            <input type="text" id="input_signin_id" value={userInput.id} onChange={controlInput('id')} />
+            <div className="modalBackground">
+                <div className="modalWrapper">
+                    <span className="closeIcon" onClick={() => props.setIsModalVisible(false)}>&times;</span>
+                    <div >
+                        <div>
+                            <div>ID</div>
+                                <input type="text" id="input_signin_id" value={userInput.id} onChange={controlInput('id')} />
+                            </div>
+                        <div>
+                            <div>Password</div>
+                            <input type="password" id="input_signin_password" value={userInput.pw} onChange={controlInput('pw')} />
                         </div>
-                    <div>
-                        <div>Password</div>
-                        <input type="password" id="input_signin_password" value={userInput.pw} onChange={controlInput('pw')} />
+                        <div>
+                            <button className='btn btn-login' type='submit' onClick={handleLogin}>로그인</button>
+                        </div>
+                        <div className='alert-box'>{errorMessage === '' ? errorMessage : errorMessage}</div>
                     </div>
-                    <div>
-                        <button className='btn btn-login' type='submit' onClick={handleLogin}>로그인</button>
-                    </div>
-                    <div className='alert-box'>{errorMessage === '' ? errorMessage : errorMessage}</div>
                 </div>
             </div>
           ) : null}

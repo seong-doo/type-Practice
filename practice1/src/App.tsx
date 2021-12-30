@@ -40,14 +40,20 @@ function App() {
               <ArticleWriteModal articlesList={articlesList} setArticleList={setArticleList} />
             </div> : null}
             <div>
+                  <div className="articleList"> 
+                    <span>title</span>
+                    <span>content</span>
+                    <span>writer</span>
+                    <span>createdAt</span>
+                  </div>
               {articlesList.map((el:any)=> {
                 return (
-                <div>
-                  <span>{el.articleTitle}</span>
-                  <span>{el.articleContent}</span>
-                  <span>{el.articleWriter}</span>
-                  <span>{el.articleAte}</span>
-                </div>
+                  <div className="articleList">
+                    <span>{el.articleTitle}</span>
+                    <span>{el.articleContent}</span>
+                    <span>{el.articleWriter}</span>
+                    <span>{el.articleAte}</span>
+                  </div>
               )})}
             </div>
         </div>

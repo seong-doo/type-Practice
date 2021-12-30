@@ -1,0 +1,43 @@
+h1 {
+  color: red;
+}
+
+p {
+  color: red;
+}
+
+span {
+  width: 25%;
+}
+
+.modalBackground {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modalWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 280px;
+  height: 200px;
+  background-color: white;
+  position: relative;
+  box-sizing: border-box;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+}
+
+.articleList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 3vh;
+}
+
+/*# sourceMappingURL=App.css.map */
